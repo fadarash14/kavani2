@@ -94,6 +94,7 @@ type User = {
   national_code: null | string;
   status: string;
   last_login_at: string;
+  voucher:string;
 };
 
 type Transaction = {

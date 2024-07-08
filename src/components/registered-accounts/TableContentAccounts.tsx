@@ -77,6 +77,12 @@ const TableContent = ({ selectedOption }: IProps) => {
                   >
                     کد ملی
                   </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-xs font-medium tracking-wider text-center uppercase text-slate-700 dark:text-slate-300"
+                  >
+                    کد تخفیف
+                  </th>
                   {/* {selectedOptionValue === "registered" && (
                     <th
                       scope="col"
@@ -119,6 +125,7 @@ const TableContent = ({ selectedOption }: IProps) => {
                           national_code,
                           username,
                           id,
+                          voucher
                         } = user;
                         return (
                           <tr key={id}>
@@ -145,6 +152,11 @@ const TableContent = ({ selectedOption }: IProps) => {
                             <td className="px-6 py-4 text-center whitespace-nowrap">
                               <div className="text-sm text-slate-700 dark:text-slate-300">
                                 {national_code || "-"}
+                              </div>
+                            </td>
+                            <td className="px-6 py-4 text-center whitespace-nowrap">
+                              <div className="text-sm text-slate-700 dark:text-slate-300">
+                                {voucher || "-"}
                               </div>
                             </td>
                             {/* {selectedOptionValue === "registered" && (

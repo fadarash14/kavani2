@@ -2,7 +2,8 @@ import axios from "axios";
 
 // const baseURL = "http://78.109.199.178:8082/v5";
 
-const BASE_URL = "https://api.platform.nova724.com/v5";
+// const BASE_URL = "https://api.platform.nova724.com/v5";
+const BASE_URL = "http://31.14.123.22:8082/v5";
 
 export const axiosInstance = axios.create({
   baseURL: BASE_URL,

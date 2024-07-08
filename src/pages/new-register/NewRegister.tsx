@@ -8,12 +8,12 @@ import { toast } from "react-toastify";
 import router from "@/routes";
 
 const NewRegister = () => {
-  const callBackUrl = "http://admin-kavani.nova724.com/success-payment";
+  const callBackUrl = "https://admin-kavani.nova724.com/success-payment";
   const [personPayment, setPersonPayment] = useState({
     name: "",
     lastName: "",
     mobile: "",
-    amount: 70000,
+    amount: 700000,
     callBackUrl,
   });
 
@@ -28,11 +28,11 @@ const NewRegister = () => {
   const registerNewPerson = async () => {
     try {
       const res = await axiosPrivate.post("/panel/accounts/add", {
-        personPayment,
+        ...personPayment,
       });
       if (res.status === 200) {
         mutate(`/panel/banner/get/all/0/100`);
-        toast.success("بنر با موفقیت ایجاد شد");
+        toast.success("ثبت با موفقیت انجام شد");
         router.navigate("/superuser/registered-account");
       } else {
         toast.error("مشکلی پیش آمد، دوباره تلاش کنید");
